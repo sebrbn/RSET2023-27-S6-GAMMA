@@ -1,0 +1,10 @@
+- the reason there's two outputs is bc we stored almost identical data twice, it returns the same triple twice
+- create an aura instance in neo4j and the uri, id and password (only given once so save it) u get from that needs to be replaced in the cri.py
+- packages to download -> python (terminal in VS Code) 
+	import nltk
+	nltk.download("punkt")                                        //(and do the same for nltk.download('punkt_tab'))
+ (* and run it and once u see True..enter exit()*)
+- output format:
+ it runs
+ then "ingest filename.txt"
+ then "ask Question"
