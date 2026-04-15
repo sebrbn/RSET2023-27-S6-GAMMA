@@ -1,0 +1,19 @@
+# CARLA SAC Optimization Gitignore
+venv/
+miniconda/
+carla_0.9.13/
+__pycache__/
+*.pyc
+
+# Heavy training artifacts (keep code and final results)
+# Only exclude temporary step checkpoints, keep final and specific stage models
+# models/sac_cl_step*.zip
+# models/sac_drl_step*.zip
+
+# logs/
+# training.log
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
