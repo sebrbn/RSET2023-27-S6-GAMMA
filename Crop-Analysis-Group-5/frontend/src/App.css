@@ -1,0 +1,611 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f7fb;
+}
+
+/* ================= LAYOUT ================= */
+
+.app{
+display:flex;
+width:100%;
+min-height:100vh;
+}
+
+.main{
+margin-left:240px;
+width:calc(100% - 240px);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+.content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100vh;
+background:linear-gradient(180deg,#065f46,#047857);
+padding:25px;
+box-sizing:border-box;
+display:flex;
+flex-direction:column;
+z-index:1000;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar button {
+  padding: 12px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar button:hover {
+  background: #10b981;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  width: 100%;
+  background: white;
+  padding: 20px 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ================= CARDS ================= */
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* ================= CHAT ================= */
+
+.chat-page{
+display:flex;
+justify-content:center;
+padding-top:40px;
+}
+
+.chat-card{
+width:700px;
+background:white;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+height:520px;
+}
+
+.chat-title{
+padding:18px;
+background:#047857;
+color:white;
+font-weight:600;
+border-radius:14px 14px 0 0;
+}
+
+.chat-messages{
+flex:1;
+overflow-y:auto;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+background:#f9fafb;
+}
+
+.message{
+padding:10px 14px;
+border-radius:10px;
+max-width:70%;
+font-size:14px;
+}
+
+.message.user{
+align-self:flex-end;
+background:#047857;
+color:white;
+}
+
+.message.bot{
+align-self:flex-start;
+background:white;
+border:1px solid #e5e7eb;
+}
+
+.chat-input-area{
+display:flex;
+padding:15px;
+border-top:1px solid #eee;
+gap:10px;
+}
+
+.chat-input-area input{
+flex:1;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.chat-input-area button{
+background:#047857;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.chat-input-area button:hover{
+background:#065f46;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard{
+width:100%;
+display:flex;
+flex-direction:column;
+gap:40px;
+}
+
+/* two columns */
+
+.dashboard-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* cards */
+
+.dashboard-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* data rows */
+
+.data-item{
+display:grid;
+grid-template-columns:40px 1fr auto;
+align-items:center;
+background:#f7f7f7;
+padding:16px;
+margin-top:12px;
+border-radius:10px;
+gap:15px;
+}
+
+.data-item svg{
+font-size:26px;
+}
+
+.data-item .label{
+font-size:14px;
+color:#555;
+}
+
+.data-item .value{
+font-size:18px;
+font-weight:600;
+justify-self:end;
+}
+/* section titles */
+
+.section-title{
+margin-bottom:20px;
+color:#065f46;
+}
+
+/* icons */
+
+.icon{
+font-size:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.icon.weather{
+color:#2563eb;
+}
+
+.icon.sensor{
+color:#047857;
+}
+
+/* status */
+
+.status{
+font-size:12px;
+padding:4px 8px;
+border-radius:6px;
+}
+
+.status.live{
+background:#dcfce7;
+color:#047857;
+}
+
+/* buttons */
+
+.dashboard-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.action-btn{
+background:#047857;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+}
+
+.action-btn:hover{
+background:#065f46;
+}
+
+.data-text{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.data-label{
+font-size:14px;
+color:#555;
+}
+
+.data-value{
+font-size:20px;
+font-weight:600;
+margin-top:3px;
+}
+
+/* data layout */
+
+.data-text{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.data-label{
+font-size:14px;
+color:#555;
+}
+
+.data-value{
+font-size:20px;
+font-weight:600;
+margin-top:3px;
+}
+
+.data-value{
+font-size:20px;
+font-weight:600;
+margin-top:3px;
+}
+
+
+/* MAP */
+
+.map-card{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+margin-bottom:30px;
+}
+
+.map-card-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.map-container{
+height:400px;
+width:100%;
+border-radius:10px;
+overflow:hidden;
+}
+
+.map-coordinates{
+margin-top:10px;
+color:#555;
+}
+
+.moisture-alert{
+background:#fee2e2;
+border:1px solid #ef4444;
+color:#b91c1c;
+padding:15px;
+border-radius:10px;
+margin:20px 0;
+font-weight:500;
+text-align:center;
+}
+
+.moisture-alert.ideal{
+background:#dcfce7;
+border:1px solid #22c55e;
+color:#166534;
+}
+
+/* ================= PREDICTION PAGE ================= */
+
+.prediction-page{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:40px;
+}
+
+.prediction-container{
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:60px;
+margin-top:30px;
+}
+
+/* crop card */
+
+.crop-card{
+position:relative;
+width:240px;
+height:320px;
+background:white;
+border-radius:25px;
+display:flex;
+flex-direction:column;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* image top */
+
+.crop-image{
+height:50%;
+width:100%;
+}
+
+.crop-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* text */
+
+.crop-info{
+padding:12px;
+text-align:center;
+}
+
+.crop-info h3{
+margin:6px 0;
+}
+
+.crop-info p{
+font-size:13px;
+color:#555;
+}
+
+/* medal badge */
+
+.rank-badge{
+position:absolute;
+top:10px;
+left:10px;
+font-size:22px;
+}
+
+/* ranking sizes */
+
+.rank-1{
+transform:scale(1.15);
+z-index:3;
+animation:bestCropGlow 2s infinite alternate;
+}
+
+.rank-2{
+transform:scale(1);
+z-index:2;
+}
+
+.rank-3{
+transform:scale(0.95);
+opacity:0.9;
+}
+
+/* glow animation */
+
+@keyframes bestCropGlow{
+
+0%{
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+100%{
+box-shadow:0 15px 40px rgba(16,185,129,0.6);
+}
+
+}
+
+/* button */
+
+.recommend-btn{
+display:flex;
+justify-content:center;
+margin-top:20px;
+}
+
+/* ===== RECOMMENDATION PAGE ===== */
+
+.recommendation-page{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:40px;
+}
+
+/* container */
+
+.recommendation-container{
+display:flex;
+gap:40px;
+justify-content:center;
+align-items:stretch;   /* key line */
+max-width:900px;
+width:100%;
+}
+
+.recommendation-image-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+.recommendation-image-card{
+width:420px;
+height:320px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+background:white;
+}
+
+/* details card */
+
+.recommendation-info-card{
+width:420px;
+background:white;
+border-radius:25px;
+padding:25px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+height:100%;   /* matches image card height */
+}
+/* ===== PROFIT PAGE ===== */
+
+.profit-page{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:40px;
+}
+
+/* summary cards */
+
+.profit-summary{
+display:flex;
+gap:30px;
+}
+
+.profit-card{
+width:220px;
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+transition:transform 0.2s ease;
+}
+
+.profit-card:hover{
+transform:translateY(-5px);
+}
+
+.profit-card h3{
+margin-bottom:10px;
+font-size:16px;
+color:#444;
+}
+
+.profit-card p{
+font-size:20px;
+font-weight:600;
+}
+
+/* highlight profit */
+
+.profit-card.highlight{
+background:#047857;
+color:white;
+}
+
+.profit-card.highlight h3{
+color:white;
+}
+
+.profit-card.highlight p{
+color:white;
+}
+
+/* chart */
+
+.profit-chart-card{
+width:800px;
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.profit-chart-card h3{
+margin-bottom:20px;
+text-align:center;
+}
+
+.confidence{
+font-weight:600;
+margin-bottom:5px;
+}
+
+.best{
+color:#2e7d32;
+}
+
+.good{
+color:#1976d2;
+}
+
+.possible{
+color:#f57c00;
+}
