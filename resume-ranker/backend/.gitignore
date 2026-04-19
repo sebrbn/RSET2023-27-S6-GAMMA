@@ -1,0 +1,19 @@
+# Virtual env
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database
+*.db
+*.sqlite3
+
+# Uploaded resumes
+uploaded_resumes/
+
+# Environment
+.env
+
+.DS_Store
+Thumbs.db
