@@ -1,0 +1,56 @@
+{
+  "6e27660ae0c1590f569732c4": {
+    "studied": [
+      "Wastewater Story::Water Freshens up-an eventful journey",
+      "Heat::Differentiates substances as conductors or insulators",
+      "Nutrition in Animals::Digestion in Humans"
+    ],
+    "streak": 1,
+    "last_study_day": "2026-03-11",
+    "quiz_history": {
+      "Wastewater Story::Water Freshens up-an eventful journey": [
+        {
+          "score": 0,
+          "total": 8,
+          "pct": 0,
+          "date": 1773238301128
+        }
+      ],
+      "Heat::Differentiates substances as conductors or insulators": [
+        {
+          "score": 4,
+          "total": 8,
+          "pct": 50,
+          "date": 1773240039655
+        }
+      ],
+      "Nutrition in Animals::Digestion in Humans": [
+        {
+          "score": 6,
+          "total": 8,
+          "pct": 75,
+          "date": 1773244418075
+        }
+      ]
+    },
+    "quizzes_taken": 3
+  },
+  "cb880646dad75b6d25a8a1cb": {
+    "studied": [
+      "Knowledge Representation::Approaches to knowledge representation"
+    ],
+    "streak": 1,
+    "last_study_day": "2026-03-12",
+    "quiz_history": {
+      "Knowledge Representation::Approaches to knowledge representation": [
+        {
+          "score": 2,
+          "total": 8,
+          "pct": 25,
+          "date": 1773285727953
+        }
+      ]
+    },
+    "quizzes_taken": 1
+  }
+}
