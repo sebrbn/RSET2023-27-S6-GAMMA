@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+font-family: "Segoe UI", Arial;
+background: linear-gradient(135deg,#eef2f3,#dfe9f3);
+margin:0;
+padding:0;
+}
+
+/* Main Card */
+
+.container{
+width:850px;
+margin:auto;
+margin-top:40px;
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Title */
+
+h2{
+text-align:center;
+color:#333;
+margin-bottom:20px;
+}
+
+/* Section Headings */
+
+h3{
+margin-top:25px;
+color:#444;
+border-bottom:2px solid #eee;
+padding-bottom:5px;
+}
+
+/* Form layout */
+
+.form-group{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px;
+}
+
+.form-group label{
+font-weight:600;
+color:#444;
+width:60%;
+}
+
+.form-group input{
+width:35%;
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+/* Button */
+
+button{
+display:block;
+margin:auto;
+margin-top:20px;
+padding:12px 30px;
+background:#007BFF;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+/* Result Section */
+
+.result{
+margin-top:30px;
+padding:20px;
+background:#f5f9ff;
+border-left:5px solid #007BFF;
+border-radius:8px;
+}
+
+/* Recommendation */
+
+ul.recommendation{
+list-style:none;
+padding-left:0;
+}
+
+ul.recommendation li{
+background:#f0f4ff;
+padding:12px;
+margin-bottom:10px;
+border-radius:6px;
+border-left:4px solid #007BFF;
+line-height:1.6;
+}
+
+ul.recommendation li strong{
+color:#0056b3;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h2>Digital Addiction Prediction</h2>
+
+<form method="POST" action="/prediction">
+
+<h3>Addiction Features</h3>
+
+{% for f in features1 %}
+<div class="form-group">
+<label>{{ f }}</label>
+<input type="number" step="any" name="{{ f }}" required>
+</div>
+{% endfor %}
+
+<h3>Health Risk Features</h3>
+
+{% for f in features2 %}
+<div class="form-group">
+<label>{{ f }}</label>
+<input type="number" step="any" name="{{ f }}" required>
+</div>
+{% endfor %}
+
+<button type="submit">Predict</button>
+
+</form>
+
+
+{% if score %}
+
+<div class="result">
+
+<h3>Prediction Result</h3>
+
+<p><strong>Addiction Score:</strong> {{ score }}</p>
+<p><strong>Addiction Level:</strong> {{ level }}</p>
+<p><strong>Health Risk:</strong> {{ health }}</p>
+
+<h3>AI Recommendations</h3>
+
+<ul class="recommendation">
+
+{% for point in recommendation %}
+
+{% if ':' in point %}
+{% set title, explanation = point.split(':', 1) %}
+<li><strong>{{ title.strip() }}:</strong> {{ explanation.strip() }}</li>
+
+{% else %}
+<li>{{ point }}</li>
+{% endif %}
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
